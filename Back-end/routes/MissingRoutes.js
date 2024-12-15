@@ -10,10 +10,10 @@ router.use(protect)
 router
     .route('/')
     .get(getMissingPersons)
-    .post(createMissing)
+    .post(protect,createMissing)
 
 router
     .route('/:id')
-    .delete(deleteMissing)
+    .delete(protect,deleteMissing)
 
 module.exports = router
